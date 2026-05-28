@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Quiet Crisis — Food Insecurity in Canada</title>
 
-<!-- SOCIAL SHARING: replace YOURUSERNAME/REPONAME below with your live GitHub Pages address (both URLs). -->
+<!-- SOCIAL SHARING: live GitHub Pages address. -->
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nearly 1 in 4 people in Canada can't reliably afford food">
 <meta property="og:description" content="A short interactive on the state of food insecurity in Canada — who's affected, where, and what's driving it. Latest Statistics Canada & Food Banks Canada data.">
-<meta property="og:url" content="https://YOURUSERNAME.github.io/REPONAME/">
-<meta property="og:image" content="https://YOURUSERNAME.github.io/REPONAME/preview.png">
+<meta property="og:url" content="https://rigarcia07.github.io/food-insecurity-canada/">
+<meta property="og:image" content="https://rigarcia07.github.io/food-insecurity-canada/preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nearly 1 in 4 people in Canada can't reliably afford food">
 <meta name="twitter:description" content="A short interactive on the state of food insecurity in Canada. Latest StatCan & Food Banks Canada data.">
-<meta name="twitter:image" content="https://YOURUSERNAME.github.io/REPONAME/preview.png">
+<meta name="twitter:image" content="https://rigarcia07.github.io/food-insecurity-canada/preview.png">
 <style>
   :root{
     --paper:#f7f3ec; --ink:#211c16; --muted:#6f655a; --line:#e6ddd0;
@@ -111,8 +111,11 @@
   .cause p{font-size:.9rem;color:var(--muted);margin-top:6px}
 
   /* TRENDS */
-  .trend-card{background:var(--card);border:1px dashed var(--amber);border-radius:14px;padding:22px;margin-top:20px}
-  .trend-card .h{font-family:var(--serif);font-size:1.15rem}
+  .chart-wrap{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px 14px}
+  .chart-wrap svg{width:100%;height:auto;display:block}
+  .chart-cap{font-size:.78rem;color:var(--muted);margin-top:12px;line-height:1.5}
+  .sub-h{font-family:var(--serif);font-size:1.12rem;font-weight:600;margin-top:34px}
+  .trendlink{display:inline-block;margin-top:18px;font-size:.9rem;font-weight:600}
 
   /* CTA */
   .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
@@ -143,7 +146,7 @@
     <div class="eyebrow">The Quiet Crisis · Canada · 2025–26</div>
     <h1>Nearly <span class="big">1 in 4</span> people in Canada can&rsquo;t reliably afford food.</h1>
     <p class="lede">In 2025, <strong>24.0%</strong> of Canadians &mdash; about <strong>9.8&nbsp;million people</strong>, including <strong>2.4&nbsp;million children</strong> &mdash; lived in food-insecure households. Here&rsquo;s what the data actually shows, and what&rsquo;s driving it.</p>
-    <div class="freshness">Sources: Statistics Canada, Canadian Income Survey (2025 data, released April 2026) &middot; Food Banks Canada, <em>HungerCount 2025</em>.</div>
+    <div class="freshness">Sources: Statistics Canada, 2024 Canadian Income Survey (food insecurity measured Jan&ndash;Jul 2025), released April 2026 &middot; Food Banks Canada, <em>HungerCount 2025</em>.</div>
   </div>
 </header>
 
@@ -169,7 +172,7 @@
     <div class="yearcard">
       <div class="rate" id="yr-rate">24.0%</div>
       <div class="ppl" id="yr-ppl">≈ 9.8 million people food insecure</div>
-      <div class="note" id="yr-note">First decline after three record years &mdash; down from 25.7% in 2024. Researchers warn it may not hold: U.S. tariffs have pushed food prices up <strong>25% cumulatively since 2021</strong>, and Second Harvest (May 2026) projects rising demand on charities already stretched thin.</div>
+      <div class="note" id="yr-note">First decline after three record years &mdash; down from 25.7% in 2024. Researchers warn it may not hold: food prices are already up about <strong>25% since 2021</strong>, and Second Harvest (2025) warns proposed U.S. tariffs could push more people into hunger as demand on charities rises.</div>
     </div>
   </div>
 </section>
@@ -215,7 +218,7 @@
       <div class="flip" onclick="this.classList.toggle('flipped')">
         <div class="flip-in">
           <div class="face front"><div class="myth">Common assumption</div><div class="txt">&ldquo;This wouldn&rsquo;t happen in a big city like Toronto.&rdquo;</div><div class="cue">tap →</div></div>
-          <div class="face back"><div class="myth">The reality</div><div class="stat-big">1 in 10</div><div class="sub">Torontonians now rely on a food bank. Daily Bread logged 921,513 visits in Q1 2026 — nearly 4× pre-pandemic.</div></div>
+          <div class="face back"><div class="myth">The reality</div><div class="stat-big">1 in 10</div><div class="sub">Torontonians now rely on a food bank. Daily Bread recorded 4.1 million visits last year — an all-time high, up 340% since 2019.</div></div>
         </div>
       </div>
       <div class="flip" onclick="this.classList.toggle('flipped')">
@@ -231,11 +234,11 @@
 <!-- PROVINCIAL -->
 <section>
   <div class="wrap reveal">
-    <div class="eyebrow">A uneven map</div>
+    <div class="eyebrow">An uneven map</div>
     <h2>Where you live changes the odds.</h2>
     <p class="lede" style="margin-top:12px">Food insecurity rates by province and territory (2025). The dashed line marks the national rate of 24.0%.</p>
     <div class="bars" id="provBars"></div>
-    <div class="legendnote">Selected provinces and territories. Saskatchewan shown is 2024 data; all others 2025. Quebec&rsquo;s lower rate is linked in part to stronger provincial social programs. Source: Statistics Canada, Canadian Income Survey.</div>
+    <div class="legendnote">Selected provinces and territories (2025). Yukon is the lowest overall; Quebec&rsquo;s lower rate is linked in part to stronger provincial social programs. Source: Statistics Canada, Canadian Income Survey / PROOF.</div>
   </div>
 </section>
 
@@ -277,16 +280,23 @@
   </div>
 </section>
 
-<!-- TRENDS (honest placeholder) -->
+<!-- TRENDS -->
 <section>
   <div class="wrap reveal">
     <div class="eyebrow">Public attention</div>
     <h2>Canadians are searching for answers.</h2>
-    <p class="lede" style="margin-top:12px">Online interest in &ldquo;food insecurity&rdquo; has stayed elevated across Canada — a signal that this has moved from a margins issue to a mainstream concern.</p>
-    <div class="trend-card">
-      <div class="h">Explore the live search data →</div>
-      <p style="margin-top:8px;font-size:.92rem;color:var(--muted)">See how interest in &ldquo;Food Insecurity&rdquo; has moved across Canada over the past three months on <a href="https://trends.google.com/trends/explore?q=Food%20Insecurity&date=today%203-m&geo=CA&hl=en-CA" target="_blank" rel="noopener">Google Trends</a>.</p>
+    <p class="lede" style="margin-top:12px">Search interest in &ldquo;food insecurity&rdquo; ran high and volatile through the winter and spring of 2026 &mdash; with its sharpest spike in March, before easing through May. It&rsquo;s a rough proxy for attention, not prevalence, but it shows the issue is firmly on people&rsquo;s minds.</p>
+    <div class="chart-wrap">
+      <svg id="trendChart" viewBox="0 0 720 260" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Line chart of Google search interest in food insecurity in Canada, February to May 2026"></svg>
     </div>
+    <div class="chart-cap">Relative Google search interest (0&ndash;100, where 100 is the single highest day). The bold line is a 7-day average that cuts daily noise; the shaded area is the raw daily signal. Source: Google Trends, Canada, 28 Feb &ndash; 28 May 2026.</div>
+
+    <div class="sub-h">Where the searching happened</div>
+    <p style="margin-top:8px;color:var(--muted);font-size:.95rem">Relative search interest by province (100 = highest). This maps where people <em>searched</em> the term &mdash; shaped by news, population, and local events &mdash; not where food insecurity is most severe.</p>
+    <div class="bars" id="geoBars" style="margin-top:18px"></div>
+    <div class="chart-cap">Provinces with insufficient search volume (New Brunswick, P.E.I., and the territories) are omitted by Google. Source: Google Trends, Canada, Feb&ndash;May 2026.</div>
+
+    <a class="trendlink" href="https://trends.google.com/trends/explore?q=Food%20Insecurity&date=today%203-m&geo=CA&hl=en-CA" target="_blank" rel="noopener">Explore the live data on Google Trends &rarr;</a>
   </div>
 </section>
 
@@ -312,7 +322,7 @@
 <footer>
   <div class="wrap">
     <p class="sources">
-      <strong>Sources:</strong> Statistics Canada, Canadian Income Survey (2025 data, released April 2026) &middot; Food Banks Canada, <em>HungerCount 2025</em> &middot; Daily Bread Food Bank, <em>Who&rsquo;s Hungry 2025</em> &middot; Second Harvest (May 2026) &middot; PROOF, University of Toronto. Figures reflect the most recent data available at time of publishing and are presented for public awareness.
+      <strong>Sources:</strong> Statistics Canada, 2024 Canadian Income Survey (food insecurity measured Jan&ndash;Jul 2025), released April 2026 &middot; Food Banks Canada, <em>HungerCount 2025</em> &middot; Daily Bread Food Bank, <em>Who&rsquo;s Hungry 2025</em> &middot; Second Harvest, <em>The Cost of Conflict</em> (2025) &middot; PROOF, University of Toronto. Figures reflect the most recent data available at time of publishing and are presented for public awareness.
     </p>
     <div class="byline">
       Data visualization by <b>Roger Garcia</b> &middot; Research: Statistics Canada &amp; Food Banks Canada.
@@ -323,7 +333,7 @@
 <script>
 // ---------- Year toggle ----------
 var YEAR={
-  2025:{rate:"24.0%",ppl:"≈ 9.8 million people food insecure",note:"First decline after three record years — down from 25.7% in 2024. Researchers warn it may not hold: U.S. tariffs have pushed food prices up <strong>25% cumulatively since 2021</strong>, and Second Harvest (May 2026) projects rising demand on charities already stretched thin."},
+  2025:{rate:"24.0%",ppl:"≈ 9.8 million people food insecure",note:"First decline after three record years — down from 25.7% in 2024. Researchers warn it may not hold: food prices are already up about <strong>25% since 2021</strong>, and Second Harvest (2025) warns proposed U.S. tariffs could push more people into hunger as demand on charities rises."},
   2024:{rate:"25.7%",ppl:"≈ 10 million people food insecure",note:"The third consecutive record-breaking year — and one of the highest rates in two decades of monitoring before the slight 2025 decline."}
 };
 function setYear(y){
@@ -351,11 +361,9 @@ function makeBars(el,data,max,color,nat){
 }
 var prov=[
   {name:"Nunavut",v:56.4,label:"56.4%"},
-  {name:"Saskatchewan*",v:30.6,label:"30.6%"},
   {name:"Alberta",v:28.4,label:"28.4%"},
   {name:"New Brunswick",v:28.2,label:"28.2%"},
   {name:"Manitoba",v:27.9,label:"27.9%"},
-  {name:"Nfld & Labrador",v:25.5,label:"25.5%"},
   {name:"Canada (avg)",v:24.0,label:"24.0%"},
   {name:"Quebec",v:18.0,label:"18.0%"},
   {name:"Yukon",v:15.5,label:"15.5%"}
@@ -385,6 +393,50 @@ var surge=[
 makeBars(document.getElementById('surgeBars'),surge,2.2,function(d){
   return d.name.indexOf('2025')>-1 ? 'var(--red)' : '#b7a892';
 });
+
+// ---------- Google Trends: interest over time ----------
+var TS=[53,0,0,46,56,58,0,0,0,0,0,100,0,0,0,0,0,58,0,70,78,0,71,47,52,56,52,75,63,0,64,0,59,75,0,0,58,0,85,49,45,0,0,0,58,47,85,55,0,0,0,0,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,63,0,0,0,51,53,29,23,11,10,14,29,33,33,28,17,22,39,43,36,34];
+(function(){
+  var svg=document.getElementById('trendChart');
+  if(!svg) return;
+  var W=720,H=260,padL=34,padR=14,padT=14,padB=30;
+  var pw=W-padL-padR, ph=H-padT-padB, n=TS.length;
+  var X=function(i){return padL+(i/(n-1))*pw;};
+  var Y=function(v){return padT+(1-v/100)*ph;};
+  var ma=TS.map(function(_,i){var a=Math.max(0,i-3),b=Math.min(n-1,i+3),s=0,c=0;for(var j=a;j<=b;j++){s+=TS[j];c++;}return s/c;});
+  var g='';
+  [0,50,100].forEach(function(v){var y=Y(v);
+    g+='<line x1="'+padL+'" y1="'+y+'" x2="'+(W-padR)+'" y2="'+y+'" stroke="#e6ddd0" stroke-width="1"/>';
+    g+='<text x="'+(padL-6)+'" y="'+(y+3)+'" text-anchor="end" font-size="10" fill="#9a8f80" font-family="sans-serif">'+v+'</text>';});
+  [{i:1,t:"Mar"},{i:32,t:"Apr"},{i:62,t:"May"}].forEach(function(tk){
+    g+='<text x="'+X(tk.i)+'" y="'+(H-8)+'" text-anchor="middle" font-size="10" fill="#9a8f80" font-family="sans-serif">'+tk.t+'</text>';});
+  var area='M '+X(0)+' '+Y(TS[0]);
+  for(var i=1;i<n;i++){area+=' L '+X(i)+' '+Y(TS[i]);}
+  area+=' L '+X(n-1)+' '+Y(0)+' L '+X(0)+' '+Y(0)+' Z';
+  g+='<path d="'+area+'" fill="#2f6b5e" fill-opacity="0.10" stroke="none"/>';
+  var line='M '+X(0)+' '+Y(ma[0]);
+  for(var k=1;k<n;k++){line+=' L '+X(k)+' '+Y(ma[k]);}
+  g+='<path id="maPath" d="'+line+'" fill="none" stroke="#2f6b5e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
+  svg.innerHTML=g;
+  try{var p=document.getElementById('maPath'),len=p.getTotalLength();
+    p.style.strokeDasharray=len;p.style.strokeDashoffset=len;
+    var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){p.style.transition='stroke-dashoffset 1.6s ease';p.style.strokeDashoffset=0;io2.unobserve(p);}});},{threshold:.3});
+    io2.observe(svg);
+  }catch(e){}
+})();
+
+// ---------- Google Trends: interest by province ----------
+var geo=[
+  {name:"Nova Scotia",v:100,label:"100"},
+  {name:"Nfld & Labrador",v:97,label:"97"},
+  {name:"Ontario",v:74,label:"74"},
+  {name:"Saskatchewan",v:61,label:"61"},
+  {name:"British Columbia",v:50,label:"50"},
+  {name:"Manitoba",v:43,label:"43"},
+  {name:"Alberta",v:39,label:"39"},
+  {name:"Québec",v:28,label:"28"}
+];
+makeBars(document.getElementById('geoBars'),geo,100,'var(--teal)');
 
 // ---------- Count-up + reveal on scroll ----------
 function countUp(elem){
